@@ -31,12 +31,11 @@ const section2 = [
   },
 ];
 
-const Section3 = () => {
+const Cards = () => {
   useEffect(() => {
-    
     gsap.fromTo(
       ".card-1",
-      { y: "30%", x: "-30%", opacity: 0 },
+      { y: "0%", x: "30%", opacity: 0 },
       {
         x: "0%",
         y: "0%",
@@ -69,7 +68,7 @@ const Section3 = () => {
 
     gsap.fromTo(
       ".card-3",
-      { y: "30%", x: 30, opacity: 0 },
+      { y: "0%", x: '-30%', opacity: 0 },
       {
         x: "0%",
         y: "0%",
@@ -86,34 +85,43 @@ const Section3 = () => {
   }, []);
 
   return (
-    <section className="w-full h-full xs:w-full xs:h-full">
-      <div className="w-full h-full grid grid-cols-3 gap-8 mt-24 px-24 items-center xs:w-full xs:h-full xs:flex xs:flex-col xs:items-center xs:gap-8 xs:px-4 xs:m-auto">
+   
+      <section className="w-full h-full grid grid-cols-3 gap-8 mt-24 px-24 items-center  xs:flex xs:flex-col xs:items-center xs:gap-6 xs:px-3 xs:m-auto">
         {section2.map((info, index) => {
           const cardClass =
             index === 0 ? "card-1" : index === 1 ? "card-2" : "card-3";
           return (
             <div
               key={index}
-              className={`group flex flex-col gap-8 relative xs:flex xs:flex-col xs:gap-4 xs:w-[18rem] xs:m-auto ${cardClass}`}
+              className={`group flex flex-col gap-8 relative xs:flex xs:flex-col xs:gap-4  xs:m-auto :m-auto   ${cardClass}`}
             >
               <img
-                className="w-full h-[32rem] xs:h-[15rem] object-cover"
+                className="w-full h-[32rem] xs:w-[35rem] xs:h-[15rem] object-cover"
                 src={info.img}
                 alt={`img${index + 1}`}
               />
-              
-              <div className="flex flex-col gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/50 transition-all ease-linear text-center pt-24 text-white pt-0">
-                <h3 className="text-5xl font-bold xs:text-4xl">{info.title}.</h3>
-                <h4 className="text-4xl font-bold text-red-600 xs:text-3xl">{info.num}</h4>
-                <h5 className="text-2xl font-semibold xs:text-xl">{info.subtitle}</h5>
-                <h6 className="text-lg tracking-tight xs:text-sm">{info.desc}</h6>
+
+              <div className="flex flex-col gap-4 opacity-0 group-hover:opacity-100 absolute top-0 left-0 right-0 bottom-0 z-10 bg-black/50 transition-all ease-linear text-center pt-24 text-white xs:pt-4">
+                <h3 className="text-5xl font-bold xs:text-4xl">
+                  {info.title}.
+                </h3>
+                <h4 className="text-4xl font-bold text-red-600 xs:text-3xl">
+                  {info.num}
+                </h4>
+                <h5 className="text-2xl font-semibold xs:text-xl">
+                  {info.subtitle}
+                </h5>
+                <h6 className="text-lg tracking-tight xs:text-xs">
+                  {info.desc}
+                </h6>
               </div>
             </div>
           );
         })}
-      </div>
-    </section>
+      </section>
+
   );
 };
 
-export default Section3;
+export default Cards;
+

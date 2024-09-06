@@ -16,7 +16,7 @@ const Section2 = () => {
         opacity: 1,
         delay: 0.1,
         y: 0,
-        duration: 0.7,
+        duration: 0.5,
         ease: "power2.out",
         stagger: 0.3,
         scrollTrigger: {
@@ -35,7 +35,7 @@ const Section2 = () => {
       },
       {
         scaleX: 1,
-        duration: 1,
+        duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: ".border-expand",
@@ -48,7 +48,7 @@ const Section2 = () => {
 
   return (
     <section className="w-full h-full flex flex-col items-center justify-evenly xs:w-full xs:h-full xs:flex xs:justify-evenly">
-      <div className="w-11/12 h-1 bg-black border-expand xs:w-11/12 xs:h-1 xs:bg-black xs:border-expand"></div>
+      <div className="w-11/12 h-1 bg-black border-expand"></div>
       <div className="flex flex-col items-center xs:gap-3">
         <h2 className="text-[4rem] text-center what xs:text-3xl">
           Whatever your brand challenge,
@@ -64,12 +64,10 @@ const Section2 = () => {
         </button>
       </div>
       <div className="w-11/12 h-1 bg-black border-expand"></div>
+
+     
     </section>
   );
 };
 
 export default Section2;
-
-
-
-
